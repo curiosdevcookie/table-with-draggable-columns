@@ -7,32 +7,52 @@
   <script src='index.js' defer></script>
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th draggable="true">Column 1</th>
-        <th draggable="true">Column 2</th>
-        <th draggable="true">Column 3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Column 1</td>
-        <td>Column 2</td>
-        <td>Column 3</td>
-      </tr>
-      <tr>
-        <td>Column 1</td>
-        <td>Column 2</td>
-        <td>Column 3</td>
-      </tr>
-      <tr>
-        <td>Column 1</td>
-        <td>Column 2</td>
-        <td>Column 3</td>
-      </tr>
-  </table>
+  <header>
+    <h1>The New Order: Dragging and Dropping Table Columns</h1>
+  </header>
+  <main>
+    <h2>A table with Draggable and Droppable Columns</h2> 
+    <table>
+      <thead>
+        <tr>
+          <th draggable="true">Column 1</th>
+          <th draggable="true">Column 2</th>
+          <th draggable="true">Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Column 1</td>
+          <td>Column 2</td>
+          <td>Column 3</td>
+        </tr>
+        <tr>
+          <td>Column 1</td>
+          <td>Column 2</td>
+          <td>Column 3</td>
+        </tr>
+        <tr>
+          <td>Column 1</td>
+          <td>Column 2</td>
+          <td>Column 3</td>
+        </tr>
+    </table>
 
-  <button type='button' onclick='saveTableState()'>Save state to browser storage</button>
+    <button type='button' onclick='saveTableStateSessionStorage()'>Save state to session storage</button>
+    <button type='button' onclick='saveTableStateLocalStorage()'>Save state to local storage</button>
+    <div></div>
+    <section id='newOrderSessionStorage'>
+      <h2>The New Order Saved in Session Storage</h2>
+      <button type='button' onclick='createTableSessionStorage()'>Create Table with new order</button>
+    </section>
+
+    <section id='newOrderLocalStorage'>
+      <h2>The New Order Saved in Local Storage</h2>
+      <button type='button' onclick='createTableLocalStorage()'>Create Table with new order</button>
+    </section>
+    
+    <a href="newpage.html">Go to new page to see if local storage works</a>
+
+  </main>
 </body>
 </html>

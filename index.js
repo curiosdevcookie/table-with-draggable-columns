@@ -53,13 +53,60 @@ function handleDragEnd(event) {
   dropTarget = null;
 }
 
-//Put result of dragging and dropping action in browser session storage:
-function saveTableState() {
+// Session Storage:
+function saveTableStateSessionStorage() {
   const table = document.querySelector('table');
   const tableState = table.innerHTML;
   sessionStorage.setItem('tableState', tableState);
-  console.log('Table state saved');
-
-  const storageOfTableState = sessionStorage.getItem('tableState');
-  console.log(storageOfTableState);
+  console.log(tableState);
 }
+function createTableSessionStorage() {
+
+  const newOrderSessionStorage = document.getElementById('newOrderSessionStorage');
+  const table = document.createElement('table');
+  table.innerHTML = sessionStorage.getItem('tableState');
+  newOrderSessionStorage.appendChild(table);
+}
+
+// Local Storage:
+function saveTableStateLocalStorage() {
+  const table = document.querySelector('table');
+  const tableState = table.innerHTML;
+  localStorage.setItem('tableState', tableState);
+  console.log(tableState);
+}
+
+function createTableLocalStorage() {
+  const newOrderLocalStorage = document.getElementById('newOrderLocalStorage');
+  const table = document.createElement('table');
+  table.innerHTML = localStorage.getItem('tableState');
+  const newOrderTable = newOrderLocalStorage.appendChild(table);
+  // console.log(newOrderTable);
+
+  persistElement();
+}
+
+createTableLocalStorage();
+
+function persistElement() {
+  //Serialize the table:
+  const persistedElement = document.querySelector('table').outerHTML;
+
+  //Save the serialized table to local storage:
+  localStorage.setItem('persistedElement', persistedElement);
+
+  //Retrieve the serialized table from local storage:
+  const retrievedElement = localStorage.getItem('persistedElement');
+
+  tempElement = document.createElement("div");
+  tempElement.innerHTML = retrievedElement;
+
+  //Append the retrieved table to the DOM:
+  newOrderLocalStorage.appendChild(tempElement.firstChild);
+
+}
+
+
+
+
+

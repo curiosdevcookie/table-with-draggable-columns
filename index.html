@@ -4,8 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table with draggable columns</title>
+  <script src='index.js' defer></script>
 </head>
 <body>
+  <table>
+    <thead>
+      <tr>
+        <th draggable="true">Column 1</th>
+        <th draggable="true">Column 2</th>
+        <th draggable="true">Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Column 1</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Column 1</td>
+        <td>Row 2, Column 2</td>
+        <td>Row 2, Column 3</td>
+      </tr>
+      <tr>
+        <td>Row 3, Column 1</td>
+        <td>Row 3, Column 2</td>
+        <td>Row 3, Column 3</td>
+      </tr>
+  </table>
 
+  <button type='button' onclick='saveTableState()'>Save state to browser storage</button>
 </body>
 </html>
